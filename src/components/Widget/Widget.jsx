@@ -3,6 +3,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import moment from "moment";
 
 export const Widget = ({ data }) => {
   return (
@@ -21,7 +22,7 @@ export const Widget = ({ data }) => {
       {data.ratio}
       <span className="corner">
         <div className="left">
-          <span className="link">LeetCode</span>
+          <span className="link">{moment().format("YYYY-MM-DD HH:mm:ss")}</span>
         </div>
         <div className="right">{data.icon}</div>
       </span>

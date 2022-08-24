@@ -7,15 +7,20 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import userIcon from "../../assets/images/slack.png";
+import TextField from "@mui/material/TextField";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
+import { Clock, Countdown } from "../";
 
 export const NavBar = () => {
   const { dispatch } = useContext(DarkModeContext);
 
+  const [message, setMessage] = useState(null);
   return (
     <div className="navbar">
       <div className="wrapper">
+        <Clock />
         {/* <div className="search">
           <input type="text" placeholder="Search..." />
           <SearchOutlinedIcon />

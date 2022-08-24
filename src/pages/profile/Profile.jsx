@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import recordFile from "./README.md";
 import { marked } from "marked";
 import remarkGfm from "remark-gfm";
+import moment from "moment";
 import { defaultLeetCodeData } from "./defaultLeetCodeData";
 
 export const ProfilePage = () => {
@@ -16,7 +17,6 @@ export const ProfilePage = () => {
     defaultLeetCodeData("Loading...")
   );
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -164,9 +164,21 @@ export const ProfilePage = () => {
             <Widget data={leetCodeCard} />
           </Grid>
         ))}
-        <Grid item xs={12}>
-          <div className="sectionTitle" style={{ marginTop: "20px" }}>
-            Finished Questions
+        <Grid item xs={12} style={{ display: "inline" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "start",
+              alignItems: "center",
+              marginTop: "20px",
+            }}
+          >
+            <div className="sectionTitle" style={{ marginRight: "10px" }}>
+              Finished Questions{" "}
+            </div>
+            <code className="time">
+              ({moment().format("YYYY-MM-DD HH:mm:ss")})
+            </code>
           </div>
         </Grid>
         <Grid item xs={12}>
