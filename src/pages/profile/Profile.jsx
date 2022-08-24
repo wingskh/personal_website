@@ -119,7 +119,7 @@ export const ProfilePage = () => {
     const fetchLeetCodeData = async () => {
       console.log("LeetCode =============================:");
       try {
-        const response = await fetch("https://leetcode.wingsun.workers.dev/");
+        const response = await fetch("/api/leetcode");
         const data = await response.json();
         console.log(data);
       } catch (e) {
