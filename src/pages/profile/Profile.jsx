@@ -1,5 +1,4 @@
 import "./profile.scss";
-import userIcon from "../../assets/images/icon.jpg";
 import React, { useState, useEffect } from "react";
 import { Widget } from "../../components";
 import { Grid } from "@mui/material";
@@ -116,6 +115,20 @@ export const ProfilePage = () => {
       setLoading(false);
     };
     fetchData();
+
+    const fetchLeetCodeData = async () => {
+      console.log("LeetCode =============================:");
+      try {
+        const response = await fetch("https://leetcode.wingsun.workers.dev/");
+        const data = await response.json();
+        console.log(data);
+      } catch (e) {
+        if (e instanceof Error) {
+          console.log(e.message);
+        }
+      }
+    };
+    fetchLeetCodeData();
   }, []);
 
   return (

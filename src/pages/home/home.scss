@@ -1,34 +1,62 @@
-.home {
+.homeContainer { 
   display: flex;
+  flex-direction: row ;
+  justify-content: center;
+  height: fit-content;
+  
+  .cardContainer {
+    background-color: white;
+    width: 350px !important;
+    display: flex;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 100%;
 
-  .homeContainer {  
-    margin-left: 16%;
-    flex: 6;
-    .widgets,
-    .charts {
+    .logoBtn {
+      font-size: 40px;
+      color: black;
+      min-width: 0px;      
+      width: fit-content;
+      margin-right: 10px;
+      padding: 1px;
+    }
+
+    .userIcon {
+      border-radius: 5px;
+      width: 85%;
+    }
+    
+    .userDescText {
+      h2 {
+        margin-bottom: 0px;
+      }
+      width: 85%;
+      text-align: left;
+    }
+
+    .sloganContainer {
       display: flex;
-      padding: 20px;
-      gap: 20px;
-    }
+      justify-content: center;
+      flex-direction: column ;
+      align-items: center;
+      margin-top: 5px;
+      text-align: center;
 
-    .charts {
-      padding: 5px 20px;
-    }
-
-    .listContainer {
-      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-      padding: 20px;
-      margin: 20px;
-
-      .listTitle {
-        font-weight: 500;
-        color: gray;
-        margin-bottom: 15px;
+      .slogan {
+        text-align: left;
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
       }
     }
-  }
-  .sideBarContainer{
-    flex: 1
   }
 }
