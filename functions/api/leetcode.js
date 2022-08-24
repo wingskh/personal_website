@@ -86,31 +86,3 @@ export const onRequestGet = async () => {
     },
   });
 };
-
-export const onRequestGet<{IMAGES}> = async ({ env }) => {
-  const { imagesKey } = await env.IMAGES.get("setup", "json");
-
-  const kvImagesList = await env.IMAGES.list({
-    prefix: `image:uploaded:`,
-  });
-
-  const images = kvImagesList.keys
-    .map((kvImage) => {
-      try {
-        const { id, previewURLBase, name, alt, uploaded, isPrivate } =
-          kvImage.metadata;
-
-        const previewURL = generatePreviewURL({
-          previewURLBase,
-          imagesKey,
-          isPrivate,
-        });
-
-        return {
-          id,
-          previewURL,
-          name,
-          alt,
-          uploaded,
-          isPrivate,
-        };
