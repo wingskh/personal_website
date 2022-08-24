@@ -2,6 +2,7 @@ import "./sideBar.scss";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { Box } from "@mui/material";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -30,7 +31,12 @@ export const SideBar = () => {
             <div className="sideBarItemContainer">
               <Link to={item.path} className="sideBarItem">
                 <div className="sideBarItemIcon">{item.icon}</div>
-                <div className="sideBarItemText">{item.text}</div>
+                <Box
+                  className="sideBarItemText"
+                  sx={{ display: { md: "block", xs: "none" } }}
+                >
+                  {item.text}
+                </Box>
               </Link>
             </div>
           ))}
