@@ -1,5 +1,6 @@
 import "./home.scss";
 import userIcon from "../../assets/images/icon.jpg";
+import leetcodeIcon from "../../assets/images/leetcodeIcon.png";
 import Button from "@mui/material/Button";
 
 const openUrl = (urlTyle) => {
@@ -10,6 +11,9 @@ const openUrl = (urlTyle) => {
       break;
     case "linkedin":
       url = "https://www.linkedin.com/in/ka-ho-sun-8b8897179/";
+      break;
+    case "leetcode":
+      url = "https://leetcode.com/wingskh/";
       break;
     default:
       url = "https://github.com/wingskh";
@@ -26,11 +30,14 @@ export const HomePage = () => {
         <div className="userDescText">
           <h2>Wing Sun</h2>
           <div>Software Engineer, Data Scientist</div>
-          <Button className="logoBtn" onClick={() => openUrl("github")}>
+          <Button className="iconBtn" onClick={() => openUrl("github")}>
             <i class="fa fa-github-square" aria-hidden="true" />
           </Button>
-          <Button className="logoBtn" onClick={() => openUrl("linkedin")}>
+          <Button className="iconBtn" onClick={() => openUrl("linkedin")}>
             <i class="fa fa-linkedin-square" aria-hidden="true" />
+          </Button>
+          <Button className="iconBtn" onClick={() => openUrl("leetcode")}>
+            <img className="imgBtn" src={leetcodeIcon} alt="" />
           </Button>
         </div>
       </div>
