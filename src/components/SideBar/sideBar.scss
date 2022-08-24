@@ -5,16 +5,14 @@
   min-height: 100vh;
   background-color: white;
   position: fixed;
-  margin-top: -8px;
   color: #fff;
   
   .top {
     height: 50px;
     display: flex;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 12px;
+    align-items: start;
+    margin-top: 2px;
+    margin-bottom: 2px;
     justify-content: center;
 
     .headerText {
