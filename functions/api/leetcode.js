@@ -60,29 +60,26 @@ const leetCodeApiCall = async () => {
   return results.reduce((k, v) => Object.assign(k, v), {});
 };
 
-export default {
-  async fetch() {
-    const data = await leetCodeApiCall();
-    console.log(data);
-    const json = JSON.stringify(data, null, 2);
-    return new Response(json, {
-      headers: {
-        "content-type": "application/json;charset=UTF-8",
-      },
-    });
-  },
-};
-
-// export const onRequestGet = async () => {
-//   const { leetCodeKey } = (await env.LEETCODE.get("setup", "json"));
-//   const leetcodeData = await env.LEETCODE.JSON()
-
-//   const data = await leetCodeApiCall();
-//   console.log(data);
-//   const json = JSON.stringify(data, null, 2);
-//   return new Response(json, {
-//     headers: {
-//       "content-type": "application/json;charset=UTF-8",
-//     },
-//   });
+// export default {
+//   async fetch() {
+//     const data = await leetCodeApiCall();
+//     console.log(data);
+//     const json = JSON.stringify(data, null, 2);
+//     return new Response(json, {
+//       headers: {
+//         "content-type": "application/json;charset=UTF-8",
+//       },
+//     });
+//   },
 // };
+
+export const onRequest = async () => {
+  const data = await leetCodeApiCall();
+  console.log(data);
+  const json = JSON.stringify(data, null, 2);
+  return new Response(json, {
+    headers: {
+      "content-type": "application/json;charset=UTF-8",
+    },
+  });
+};
