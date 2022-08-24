@@ -21,12 +21,15 @@ export const ProfilePage = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(recordFile);
+        const response = await fetch("/api/cpReadme");
         const data = await response.text();
         setRecordData(data);
       } catch (e) {
         if (e instanceof Error) {
           console.log(e.message);
+          const response = await fetch(recordFile);
+          const data = await response.text();
+          setRecordData(data);
         }
       }
       setLoading(false);
@@ -37,6 +40,7 @@ export const ProfilePage = () => {
       try {
         const response = await fetch("/api/leetcode");
         const leetCodeData = (await response.json())["data"];
+        console.log("leetCodeData:", leetCodeData);
         setLeetCodeData([
           {
             title: <div style={{ color: "black" }}>Total</div>,
