@@ -1,0 +1,33 @@
+.bodyContainer {
+  display: flex;
+  font-family: "Roboto" "Helvetica" "Arial" "sans-serif";
+  font-weight: 300;
+  margin: 0px;
+  background-color: #eee;
+
+  .navBarContainer{
+    margin-bottom: 70px;
+  }
+
+  .contentContainer {
+    height: calc(100vh - 90px);
+    overflow: auto;
+
+    // .cardContainer{
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   text-align: center;
+    //   // background-color: red;
+    //   // align-items: center;
+    //   margin: 10px;
+    //   height: 100%;
+      
+    // }
+  }
+
+  .sideBarContainer{
+    margin: 0px;
+    padding: 0px;
+  }
+}
