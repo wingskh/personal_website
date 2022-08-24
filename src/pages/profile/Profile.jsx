@@ -40,7 +40,6 @@ export const ProfilePage = () => {
       try {
         const response = await fetch("/api/leetcode");
         const leetCodeData = await response.json();
-        console.log("leetCodeData:", leetCodeData);
         setLeetCodeData([
           {
             title: <div style={{ color: "black" }}>Total</div>,
