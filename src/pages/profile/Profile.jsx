@@ -39,7 +39,7 @@ export const ProfilePage = () => {
     const fetchLeetCodeData = async () => {
       try {
         const response = await fetch("/api/leetcode");
-        const leetCodeData = (await response.json())["data"];
+        const leetCodeData = await response.json();
         console.log("leetCodeData:", leetCodeData);
         setLeetCodeData([
           {
