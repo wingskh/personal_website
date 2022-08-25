@@ -158,8 +158,8 @@ export const ProfilePage = () => {
         <Grid item xs={12}>
           <div className="sectionTitle">LeetCode</div>
         </Grid>
-        {leetCodeData.map((leetCodeCard) => (
-          <Grid item xs={12} sm={6} md={3}>
+        {leetCodeData.map((leetCodeCard, index) => (
+          <Grid item xs={12} sm={6} md={3} key={index}>
             <Widget data={leetCodeCard} />
           </Grid>
         ))}
