@@ -8,37 +8,25 @@ import {
   AppBar,
   Toolbar,
   Typography,
+  Divider,
+  IconButton,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSelector } from "../../redux/hooks";
+import { useDispatch } from "react-redux";
+import { changeSideBarActionCreator } from "../../redux/userPreference/userPreferenceActions";
 
 export const NavBar = () => {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const dispatch = useDispatch();
   const curPage = useSelector((state) => state.page);
+  const isSideBarOpened = useSelector((state) => state.isSideBarOpened);
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleSideBarOpenClick = (itemName) => {
+    dispatch(changeSideBarActionCreator(true));
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const tempComponent = (
-    <div className="navbarContainer">
-      <Clock />
-      <div className="items">
-        <div className="item">
-          <LanguageOutlinedIcon className="icon" />
-          &nbsp;English
-        </div>
-        <div className="item">
-          <img src={userIcon} alt="" className="avatar" />
-        </div>
-      </div>
-    </div>
-  );
   const theme = createTheme({
     components: {
       MuiAppBar: {
@@ -55,19 +43,35 @@ export const NavBar = () => {
   return (
     <ThemeProvider theme={theme}>
       <AppBar
-        component="nav"
+        // position="sticky"
         position="sticky"
-        enableColorOnDark
+        component="nav"
         className="navbarContainer"
+        open={isSideBarOpened}
       >
         <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleSideBarOpenClick}
+            sx={{
+              // marginLeft: "-5px",
+              ml: -1,
+              mr: 2,
+              ...(isSideBarOpened && {
+                display: "none",
+              }),
+            }}
+          >
+            <MenuIcon />
+          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {curPage}
           </Typography>
-          {/* <Divider /> */}
+          <Divider />
           <Clock />
           <div className="items">
-            <div className="item">
+            <div className="item notShownInMobile">
               <LanguageOutlinedIcon className="icon" />
               &nbsp;English
             </div>

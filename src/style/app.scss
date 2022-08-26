@@ -8,6 +8,12 @@
   src: url(../assets/fonts/SFUIDisplay-Regular.otf) format("opentype");
 }
 
+@media only screen and (max-width: 800px) {
+  .notShownInMobile {
+      display: none !important;
+  }
+}
+
 .bodyContainer {
   display: flex;
   font-family: SFUIText SFUIDisplay;
@@ -15,12 +21,13 @@
   margin: 0px;
   background-color: #eee;
   height: 100vh;
-
+  width: 100%;
+  
   .navBarContainer{
     // margin-bottom: 60px;
   }
 
-  .right {
+  .webRightContainer {
     width: 100%;
     height: 100%;
     

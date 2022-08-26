@@ -29,7 +29,7 @@ export const AboutPage = () => {
   return (
     <Grid container spacing="20px" direction="row" className="gridContainer">
       <Grid item>
-        <Box className="left">
+        <Box className="aboutLeftContainer">
           {/* User photo */}
           <Card className="userInfoContainer">
             <div className="userInfo">

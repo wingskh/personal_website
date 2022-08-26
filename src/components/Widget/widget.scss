@@ -16,44 +16,47 @@
 
   .corner {
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     height: fit-content;
-  }
-  .left,
-  .right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .title {
-      font-weight: bold;
-      font-size: 14px;
-      color: rgb(160, 160, 160);
-    }
-
-    .counter {
-      font-size: 28px;
-      font-weight: 300;
-    }
-
-    .link {
-      width: max-content;
-      font-size: 12px;
-      // border-bottom: 1px solid gray;
-    }
-
-    .percentage {
+    
+    .left,
+    .right {
       display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      font-size: 14px;
 
-      &.positive {
-        color: green;
+      .title {
+        font-weight: bold;
+        font-size: 14px;
+        color: rgb(160, 160, 160);
       }
-      &.negative {
-        color: red;
+
+      .counter {
+        font-size: 28px;
+        font-weight: 300;
+      }
+
+      .link {
+        width: max-content;
+        font-size: 12px;
+        // border-bottom: 1px solid gray;
+      }
+
+      .percentage {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+
+        &.positive {
+          color: green;
+        }
+        &.negative {
+          color: red;
+        }
       }
     }
   }

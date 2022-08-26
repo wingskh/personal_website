@@ -6,7 +6,7 @@
   // min-height: 100vh;
   // background-color: white;
   max-width: 300px;
-  height: 60px;
+  height: 56px;
   min-height: 0px;
   color: hsla(0,0%,100%,.8);
 
@@ -44,16 +44,35 @@
       z-index: 0;
     }
 
-    .headerText {
-      color: white;
-      min-height: 60px;
+    .headerContainer {
       display: flex;
-      align-items: center;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      justify-content: center;
-      position: sticky;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 0px;
       z-index: 5;
+
+      .headerText {
+        color: white;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        justify-content: center;
+        position: sticky;
+        flex: 1;
+      }
+      
+      .drawerIconButtonContainer {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+        width: fit-content;
+      
+        .drawerIconButton {
+          color: white;
+        }
+      }
     }
 
     .content{  

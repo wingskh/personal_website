@@ -36,7 +36,7 @@ export const Clock = ({ h24 = false }) => {
   }, []);
 
   return (
-    <div className="clock">
+    <div className="clockContainer notShownInMobile">
       {/* <div className='calendar'>
                 {
                     days.map((value, index)=>(<Word key={value} value={value} hidden={index != day}/>))

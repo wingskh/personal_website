@@ -1,6 +1,7 @@
 export const CHANGE_LANGUAGE = "change_language";
 export const CHANGE_THEME = "change_theme";
 export const CHANGE_PAGE = "change_page";
+export const CHANGE_SIDE_BAR = "change_side_bar";
 
 export const changeLanguageActionCreator = (languageCode) => {
   return {
@@ -20,5 +21,12 @@ export const changePageActionCreator = (page) => {
   return {
     type: CHANGE_PAGE,
     payload: page,
+  };
+};
+
+export const changeSideBarActionCreator = (action) => {
+  return {
+    type: CHANGE_SIDE_BAR,
+    payload: action,
   };
 };

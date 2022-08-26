@@ -1,10 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./sideBar.scss";
 import { Link } from "react-router-dom";
 import {
   Box,
   Drawer,
-  CssBaseline,
   List,
   Divider,
   Typography,
@@ -13,6 +12,7 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
+import { styled, useTheme } from "@mui/material/styles";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
@@ -22,58 +22,42 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { changePageActionCreator } from "../../redux/userPreference/userPreferenceActions";
+import {
+  changePageActionCreator,
+  changeSideBarActionCreator,
+} from "../../redux/userPreference/userPreferenceActions";
+import CssBaseline from "@mui/material/CssBaseline";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const sideBarItemList = [
   { text: "About", path: "/", icon: <DashboardIcon /> },
   { text: "Profile", path: "/profile", icon: <AccountBoxIcon /> },
-  { text: "Project", path: "/projects", icon: <LibraryBooksIcon /> },
+  // { text: "Projects", path: "/projects", icon: <LibraryBooksIcon /> },
 ];
 
 export const SideBar = () => {
   const dispatch = useDispatch();
   const [selectedPage, setSelectedPage] = useState("About");
+  const isSideBarOpened = useSelector((state) => state.isSideBarOpened);
+  const curPage = useSelector((state) => state.page);
+  // const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const handleSideBarItemClick = (itemName) => {
     dispatch(changePageActionCreator(itemName));
     setSelectedPage(itemName);
+    if (window.innerWidth < 800) {
+      handleSideBarHideClick();
+    }
   };
 
-  const tempComponent = (
-    <div className="sidebarContainer">
-      <div className="background">
-        <div className="backgroundFilter" />
-        <div className="content">
-          <div className="top">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <h2 className="headerText">Wing</h2>
-            </Link>
-          </div>
-          <hr />
-          <div className="center">
-            {sideBarItemList.map((item) => (
-              <div className="sideBarItemContainer">
-                <Link
-                  to={item.path}
-                  key={item.text}
-                  className="sideBarItem"
-                  onClick={() => handleSideBarItemClick(item.text)}
-                >
-                  <div className="sideBarItemIcon">{item.icon}</div>
-                  <Box
-                    className="sideBarItemText"
-                    sx={{ display: { md: "block", xs: "none" } }}
-                  >
-                    {item.text}
-                  </Box>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  const handleSideBarHideClick = () => {
+    dispatch(changeSideBarActionCreator(false));
+  };
+
   const drawerWidth = 260;
   const theme = createTheme({
     components: {
@@ -88,6 +72,16 @@ export const SideBar = () => {
       },
     },
   });
+
+  const DrawerHeader = styled("div")(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-end",
+  }));
+
   const hexToRgb = (input) => {
     input = input + "";
     input = input.replace("#", "");
@@ -113,30 +107,50 @@ export const SideBar = () => {
       parseInt(last, 16)
     );
   };
+
   return (
     <ThemeProvider theme={theme}>
       <Drawer
+        variant="persistent"
+        anchor="left"
+        open={isSideBarOpened}
         sx={{
           width: drawerWidth,
-          // maxWidth: drawerWidth,
-          // width: "100%",
-          flexShrink: 5,
-          // position: "sticky",
+          flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             // width: "100%",
             // maxWidth: drawerWidth,
             boxSizing: "border-box",
           },
+          // display: { md: "block", xs: "none" },
         }}
-        variant="permanent"
-        anchor="left"
         className="sidebarContainer"
       >
         <div className="background">
-          <Typography variant="h5" component="div" className="headerText">
-            Wing
-          </Typography>
+          <DrawerHeader style={{ height: "60px", minHeight: "0px" }}>
+            <div className="headerContainer">
+              {/* <div style={{ flex: 1 }}></div> */}
+              <div style={{ flex: 1 }}></div>
+              <Typography variant="h5" component="div" className="headerText">
+                Wing
+              </Typography>
+              <div className="drawerIconButtonContainer">
+                <IconButton
+                  onClick={handleSideBarHideClick}
+                  className="drawerIconButton"
+                >
+                  {theme.direction === "ltr" ? (
+                    <ChevronLeftIcon />
+                  ) : (
+                    <ChevronRightIcon />
+                  )}
+                </IconButton>
+              </div>
+            </div>
+          </DrawerHeader>
+          <Divider />
+
           <Divider className="topDivider" />
           <div className="backgroundFilter" />
           <List className="sideBarItemContainer">
@@ -203,7 +217,7 @@ export const SideBar = () => {
                       // ":hover": {
                       // },
                     }}
-                    selected={selectedPage === item.text}
+                    selected={curPage === item.text}
                   >
                     <ListItemIcon className="sideBarItemIcon">
                       {item.icon}
