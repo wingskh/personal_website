@@ -1,6 +1,23 @@
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
+import StarIcon from "@mui/icons-material/Star";
 
 export const defaultLeetCodeData = (defaultText) => [
+  {
+    title: <div style={{ color: "#f8a937" }}>Reputation</div>,
+    ratio: (
+      <div className="cardSubTitle" style={{ alignItems: "center" }}>
+        <div
+          style={{
+            fontSize: "25px",
+            color: "black",
+          }}
+        >
+          {defaultText}
+        </div>
+      </div>
+    ),
+    icon: <StarIcon style={{ color: "#f8a937" }} />,
+  },
   {
     title: <div style={{ color: "black" }}>Total</div>,
     ratio: (

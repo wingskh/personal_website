@@ -34,14 +34,19 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const sideBarItemList = [
-  { text: "About", path: "/", icon: <DashboardIcon /> },
-  { text: "Profile", path: "/profile", icon: <AccountBoxIcon /> },
+  { text: "Home", path: "/", icon: <DashboardIcon /> },
+  { text: "Profile", path: "/profile", icon: <DashboardIcon /> },
+  {
+    text: "Competitive Coding",
+    path: "/competitiveCoding",
+    icon: <AccountBoxIcon />,
+  },
   // { text: "Projects", path: "/projects", icon: <LibraryBooksIcon /> },
 ];
 
 export const SideBar = () => {
   const dispatch = useDispatch();
-  const [selectedPage, setSelectedPage] = useState("About");
+  const [selectedPage, setSelectedPage] = useState("Profile");
   const isSideBarOpened = useSelector((state) => state.isSideBarOpened);
   const curPage = useSelector((state) => state.page);
   // const [openDrawer, setOpenDrawer] = React.useState(false);

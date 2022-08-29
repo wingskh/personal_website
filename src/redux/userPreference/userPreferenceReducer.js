@@ -8,7 +8,7 @@ import {
 const defaultState = {
   language: "en",
   themeMode: "light",
-  page: "About",
+  page: "Profile",
   isSideBarOpened: window.innerWidth >= 800 ? true : false,
 };
 

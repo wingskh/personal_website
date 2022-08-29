@@ -6,31 +6,39 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import moment from "moment";
 import { Grid } from "@mui/material";
 
-export const JobExperience = ({ jobExp, style }) => {
-  const { company, title, period, learnt, logo } = jobExp;
+export const JobExperience = ({ jobExp, style, isLast }) => {
+  const { subtitle, title, period, learnt = [], logo, desc } = jobExp;
 
   return (
-    <div style={style} className="JobExperienceContainer">
+    <div
+      style={{
+        marginBottom: isLast ? "20px" : "0px",
+      }}
+      className="JobExperienceContainer"
+    >
       <div className="top">
         <div className="companyLogoContainer">
-          <img className="companyLogo" src={logo} alt={company} />
+          <img className="companyLogo" src={logo} alt={subtitle} />
         </div>
         <div className="jobDetailContainer">
           <div className="jobTitle">{title}</div>
-          <div className="companyName">{company}</div>
+          <div className="companyName">{subtitle}</div>
           <small>{period}</small>
+          {desc}
         </div>
       </div>
-      <div className="bottom">
-        {learnt.map((item, index) => {
-          return (
-            <div className="responsibilitySymbol">
-              <code>-&nbsp;</code>
-              <code key={index}>{item}</code>
-            </div>
-          );
-        })}
-      </div>
+      {learnt.length > 0 && (
+        <div className="bottom">
+          {learnt.map((item, index) => {
+            return (
+              <div className="responsibilitySymbol">
+                <code>-&nbsp;</code>
+                <code key={index}>{item}</code>
+              </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };

@@ -1,6 +1,11 @@
 import { SideBar, NavBar } from "./components";
 
-import { AboutPage, ProfilePage, ProjectsPage } from "./pages";
+import {
+  HomePage,
+  ProfilePage,
+  CompetitiveCodingPage,
+  ProjectsPage,
+} from "./pages";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/app.scss";
@@ -20,6 +25,7 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    width: "auto",
     marginLeft: `-260px`,
     ...(open && {
       transition: theme.transitions.create("margin", {
@@ -55,7 +61,7 @@ function App() {
   dispatch(
     changePageActionCreator(
       curPage.length === 0
-        ? "About"
+        ? "Profile"
         : curPage[0].toUpperCase() + curPage.substring(1).toLowerCase()
     )
   );
@@ -71,10 +77,14 @@ function App() {
             <NavBar />
             <div className="contentContainer">
               <Routes>
-                <Route path="/" element={<Navigate to="/about" />} />
-                <Route path="/about" element={<AboutPage />} />
+                <Route path="/" element={<HomePage />} />
+                {/* <Route path="/" element={<Navigate to="/profile" />} /> */}
                 <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
+                <Route
+                  path="/competitiveCoding"
+                  element={<CompetitiveCodingPage />}
+                />
+                {/* <Route path="/projects" element={<ProjectsPage />} /> */}
               </Routes>
             </div>
           </div>

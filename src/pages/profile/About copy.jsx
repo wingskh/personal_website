@@ -4,7 +4,7 @@ import leetcodeIcon from "../../assets/images/leetcodeIcon.png";
 import Button from "@mui/material/Button";
 import { Box, Card, Grid } from "@mui/material";
 import { JobExperience } from "../../components";
-import { jobExperienceData } from "./jobExperienceData";
+import { jobExperienceData } from "./honorsAndAwardsData";
 
 const openUrl = (urlTyle) => {
   let url;
@@ -25,7 +25,7 @@ const openUrl = (urlTyle) => {
   window.open(url, "_blank").focus();
 };
 
-export const AboutPage = () => {
+export const AboutPageTemp = () => {
   return (
     <Grid container spacing="20px" direction="row" className="gridContainer">
       <Grid item>
@@ -71,6 +71,24 @@ export const AboutPage = () => {
         </Box>
       </Grid>
       <Grid item xs>
+        {/* Job Experience */}
+        <Card
+          style={{
+            width: "100%",
+            alignItems: "start",
+            paddingBottom: "0px",
+            height: "fit-content",
+            marginRight: "500px",
+          }}
+        >
+          <div className="experienceContainer">
+            {jobExperienceData.map((jobExp, index) => (
+              <JobExperience jobExp={jobExp} key={index} />
+            ))}
+          </div>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
         {/* Job Experience */}
         <Card
           style={{

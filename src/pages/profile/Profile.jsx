@@ -1,196 +1,123 @@
 import "./profile.scss";
-import React, { useState, useEffect } from "react";
-import { Widget } from "../../components";
-import { Grid } from "@mui/material";
-import { leetCodeData } from "./mockups";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ReactMarkdown from "react-markdown";
-import recordFile from "./README.md";
-import { marked } from "marked";
-import remarkGfm from "remark-gfm";
-import moment from "moment";
-import { defaultLeetCodeData } from "./defaultLeetCodeData";
+import userIcon from "../../assets/images/icon.jpg";
+import leetcodeIcon from "../../assets/images/leetcodeIcon.png";
+import Button from "@mui/material/Button";
+import { Box, Card, Grid } from "@mui/material";
+import { JobExperience } from "../../components";
+import { jobExperienceData } from "./jobExperienceData";
+import { educationExperienceData } from "./educationExperienceData";
+import { honorsAndAwardsData } from "./honorsAndAwardsData";
+
+const openUrl = (urlTyle) => {
+  let url;
+  switch (urlTyle) {
+    case "github":
+      url = "https://github.com/wingskh";
+      break;
+    case "linkedin":
+      url = "https://www.linkedin.com/in/ka-ho-sun-8b8897179/";
+      break;
+    case "leetcode":
+      url = "https://leetcode.com/wingskh/";
+      break;
+    default:
+      url = "https://github.com/wingskh";
+      break;
+  }
+  window.open(url, "_blank").focus();
+};
 
 export const ProfilePage = () => {
-  const [recordData, setRecordData] = useState("");
-  const [leetCodeData, setLeetCodeData] = useState(
-    defaultLeetCodeData("Loading...")
-  );
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("/api/cpReadme");
-        const data = await response.text();
-        setRecordData(data);
-      } catch (e) {
-        if (e instanceof Error) {
-          console.log(e.message);
-          const response = await fetch(recordFile);
-          const data = await response.text();
-          setRecordData(data);
-        }
-      }
-      setLoading(false);
-    };
-    fetchData();
-
-    const fetchLeetCodeData = async () => {
-      try {
-        const response = await fetch("/api/leetcode");
-        const leetCodeData = await response.json();
-        setLeetCodeData([
-          {
-            title: <div style={{ color: "black" }}>Total</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[0]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[0].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon style={{ color: "black" }} />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(67, 160, 71)" }}>Easy</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[1]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[1].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(67, 160, 71)" }}
-              />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(251, 140, 0)" }}>Medium</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[2]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[2].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(251, 140, 0)" }}
-              />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(233, 30, 99)" }}>Hard</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[3]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[3].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(233, 30, 99)" }}
-              />
-            ),
-          },
-        ]);
-      } catch (e) {
-        if (e instanceof Error) {
-          console.log(e.message);
-          setLeetCodeData(defaultLeetCodeData("ERROR"));
-        }
-      }
-    };
-    fetchLeetCodeData();
-  }, []);
-
   return (
-    <div className="profileContainer">
-      {/* <div className="cardContainer">
-      </div> */}
-      <Grid container spacing={2} className="gridContainer">
-        <Grid item xs={12}>
-          <div className="sectionTitle">LeetCode</div>
-        </Grid>
-        {leetCodeData.map((leetCodeCard, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Widget data={leetCodeCard} />
-          </Grid>
-        ))}
-        <Grid item xs={12} style={{ display: "inline" }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "start",
-              alignItems: "center",
-              marginTop: "20px",
-            }}
-          >
-            <div className="sectionTitle" style={{ marginRight: "10px" }}>
-              Finished Questions{" "}
+    <Grid container spacing="20px" direction="row" className="profileContainer">
+      <Grid item xs={12} md={4} className="gridContainer">
+        <Box className="aboutLeftContainer">
+          {/* User photo */}
+          <div className="sectionTitle">Education</div>
+          <Card className="cardContainer">
+            <div className="cardContentContent">
+              {educationExperienceData.map((jobExp, index) => (
+                <JobExperience
+                  jobExp={jobExp}
+                  key={index}
+                  isLast={index !== educationExperienceData.length - 1}
+                />
+              ))}
             </div>
-            <code className="time">
-              ({moment().format("YYYY-MM-DD HH:mm:ss")})
-            </code>
-          </div>
-        </Grid>
-        <Grid item xs={12}>
-          <div className="cardContainer">
-            <div className="readme">
-              <ReactMarkdown
-                children={recordData}
-                remarkPlugins={[remarkGfm]}
-              />
+          </Card>
+          {/* Code */}
+          <div className="sectionTitle">Honors & awards</div>
+          <Card className="cardContainer">
+            <div className="cardContentContent">
+              {honorsAndAwardsData.map((jobExp, index) => (
+                <JobExperience
+                  jobExp={jobExp}
+                  key={index}
+                  isLast={index !== honorsAndAwardsData.length - 1}
+                />
+              ))}
             </div>
-          </div>
-        </Grid>
+          </Card>
+        </Box>
       </Grid>
-    </div>
+      <Grid item xs className="gridContainer">
+        {/* Job Experience */}
+        <div className="sectionTitle">Job Experience</div>
+        <Card
+          className="cardContainer"
+          style={{
+            height: "auto",
+            flexGrow: 1,
+          }}
+        >
+          <div className="cardContentContent">
+            {jobExperienceData.map((jobExp, index) => (
+              <JobExperience jobExp={jobExp} key={index} />
+            ))}
+          </div>
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
+
+<Box className="aboutLeftContainer">
+  {/* User photo */}
+  <Card className="userInfoContainer">
+    <div className="userInfo">
+      <img className="userIcon" src={userIcon} alt="userIcon" />
+      <div className="userDescText">
+        <h2>Wing Sun</h2>
+        <div>Software Engineer, Data Scientist</div>
+        <Button className="iconBtn" onClick={() => openUrl("github")}>
+          <i class="fa fa-github-square" aria-hidden="true" />
+        </Button>
+        <Button className="iconBtn" onClick={() => openUrl("linkedin")}>
+          <i class="fa fa-linkedin-square" aria-hidden="true" />
+        </Button>
+        <Button className="iconBtn" onClick={() => openUrl("leetcode")}>
+          <img className="imgBtn" src={leetcodeIcon} alt="" />
+        </Button>
+      </div>
+    </div>
+  </Card>
+  {/* Code */}
+  <Card className="sloganContainer">
+    <div className="slogan">
+      <code className="sloganCode">
+        #include &lt;stdio.h&gt;
+        <br />
+        <br />
+        int main &#123;
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;printf("Don't think outside the box.");
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;printf("Think like there is no box");
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;return 0;
+        <br />
+        &#125;
+      </code>
+    </div>
+  </Card>
+</Box>;
