@@ -35,27 +35,27 @@
       color:red;
     }
   }
-  .cardContainer {
+  // .cardContainer {
     // overflow-x: scroll;
     // white-space: nowrap;
 
-    .cardSubTitle {
-      display: flex;
-      align-items: center;
-      color: rgba(60, 60, 67, 0.3);
-      font-size: 30px;
-      font-weight: 600;
-      flex-direction: row;
-      width: 100%;
-      justify-content: center;
-    }
-    .readme {
-      padding-left: 100px;
-      text-align: left;
-      width: 100%;
-      overflow: auto;
-      overflow: hidden;
-      white-space: nowrap;
-    }
+  .cardSubTitle {
+    display: flex;
+    align-items: center;
+    color: rgba(60, 60, 67, 0.3);
+    font-size: 30px;
+    font-weight: 600;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
   }
+  .readme {
+    padding-left: 100px;
+    text-align: left;
+    width: 100%;
+    overflow: auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  // }
 }
