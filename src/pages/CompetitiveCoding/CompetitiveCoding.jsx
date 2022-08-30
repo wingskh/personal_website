@@ -43,7 +43,7 @@ export const CompetitiveCodingPage = () => {
         const leetCodeData = await response.json();
         setLeetCodeData([
           {
-            title: <div style={{ color: "blue" }}>Reputation</div>,
+            title: <div style={{ color: "#f8a937" }}>Reputation</div>,
             ratio: (
               <div className="cardSubTitle" style={{ alignItems: "center" }}>
                 <div
@@ -52,11 +52,11 @@ export const CompetitiveCodingPage = () => {
                     color: "black",
                   }}
                 >
-                  {leetCodeData.matchedUser.reputation}
+                  {leetCodeData.matchedUser.profile.reputation}
                 </div>
               </div>
             ),
-            icon: <StarIcon style={{ color: "black" }} />,
+            icon: <StarIcon style={{ color: "#f8a937" }} />,
           },
           {
             title: <div style={{ color: "black" }}>Total</div>,
