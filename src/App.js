@@ -57,25 +57,28 @@ function App() {
   const dispatch = useDispatch();
   let curPage = window.location.href;
   curPage = curPage.substring(curPage.lastIndexOf("/") + 1);
+  if (curPage.length === 0){
+    curPage = "Home";
+  }else{
+    curPage = curPage[0].toUpperCase() + curPage.substring(1);
+    curPage = curPage.replace(/([a-z0-9])([A-Z])/g, '$1 $2')
+  }
 
   dispatch(
-    changePageActionCreator(
-      curPage.length === 0
-        ? "Profile"
-        : curPage[0].toUpperCase() + curPage.substring(1).toLowerCase()
-    )
+    changePageActionCreator(curPage)
   );
 
   return (
     <ThemeProvider theme={theme}>
       <Main className="bodyContainer" open={isSideBarOpened}>
         <BrowserRouter>
-          <div>
+          <div style={{display: "flex", width:"fit-content"}}>
             <SideBar />
           </div>
           <div className="webRightContainer">
             <NavBar />
             <div className="contentContainer">
+              <div style={{width: "100%"}}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 {/* <Route path="/" element={<Navigate to="/profile" />} /> */}
@@ -86,6 +89,7 @@ function App() {
                 />
                 {/* <Route path="/projects" element={<ProjectsPage />} /> */}
               </Routes>
+              </div>
             </div>
           </div>
         </BrowserRouter>

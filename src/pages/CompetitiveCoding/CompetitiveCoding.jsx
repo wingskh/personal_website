@@ -23,6 +23,8 @@ export const CompetitiveCodingPage = () => {
       setLoading(true);
       try {
         const response = await fetch("/api/cpReadme");
+        // const response = await fetch('./README.md');
+
         const data = await response.text();
         setRecordData(data);
       } catch (e) {

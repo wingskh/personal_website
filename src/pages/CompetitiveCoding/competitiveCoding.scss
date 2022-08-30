@@ -32,38 +32,30 @@
       padding: 5px;
       border-radius: 5px;
       align-self: flex-end;
-      color:red
+      color:red;
     }
   }
-  // .cardContainer {
-  //   // background-color: white;
-  //   // width: auto;
-  //   // display: flex;
-  //   // margin-bottom: 500px;
-  //   // height: fit-content;
-  //   // margin: 0px;
-  //   // justify-content: start;
-  //   // text-align: center;
-  //   // align-items: start;
-  //   // -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-  //   // box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-  //   // border-radius: 10px;
-  //   // flex-direction: column;
-  //   // overflow: auto;
-  // }
+  .cardContainer {
+    // overflow-x: scroll;
+    // white-space: nowrap;
 
-  .cardSubTitle {
-    display: flex;
-    align-items: center;
-    color: rgba(60, 60, 67, 0.3);
-    font-size: 30px;
-    font-weight: 600;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-  }
-  .readme {
-    padding-left: 100px;
-    text-align: left;
+    .cardSubTitle {
+      display: flex;
+      align-items: center;
+      color: rgba(60, 60, 67, 0.3);
+      font-size: 30px;
+      font-weight: 600;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+    .readme {
+      padding-left: 100px;
+      text-align: left;
+      width: 100%;
+      overflow: auto;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 }
