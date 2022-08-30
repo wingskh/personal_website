@@ -3,6 +3,7 @@ import userIcon from "../../assets/images/icon.jpg";
 import leetcodeIcon from "../../assets/images/leetcodeIcon.png";
 import Button from "@mui/material/Button";
 import { Box, Card, Grid } from "@mui/material";
+import { useState, useEffect } from "react";
 
 const openUrl = (urlTyle) => {
   let url;
@@ -24,18 +25,27 @@ const openUrl = (urlTyle) => {
 };
 
 export const HomePage = () => {
+  const [smallScreen, setSmallScreen] = useState(window.innerWidth < 900);
+  useEffect(() => {
+    const updateWindowDimensions = () => {
+      setSmallScreen(window.innerWidth < 900);
+    };
+
+    window.addEventListener("resize", updateWindowDimensions);
+    return () => window.removeEventListener("resize", updateWindowDimensions);
+  }, []);
+
   return (
     <Grid container spacing="50px" direction="row" className="homeContainer">
       {/* User photo */}
-      <Grid xs={0} sm={0} md={3} />
       <Grid
         item
         xs={12}
         sm={12}
-        md={3}
+        md={6}
         style={{
           display: "flex",
-          justifyContent: window.innerWidth < 1000 ? "center" : "end",
+          justifyContent: smallScreen ? "center" : "end",
         }}
       >
         <Card className="cardContainer">
@@ -45,10 +55,10 @@ export const HomePage = () => {
               <h2>Wing Sun</h2>
               <div>Software Engineer, Data Scientist</div>
               <Button className="iconBtn" onClick={() => openUrl("github")}>
-                <i class="fa fa-github-square" aria-hidden="true" />
+                <i className="fa fa-github-square" aria-hidden="true" />
               </Button>
               <Button className="iconBtn" onClick={() => openUrl("linkedin")}>
-                <i class="fa fa-linkedin-square" aria-hidden="true" />
+                <i className="fa fa-linkedin-square" aria-hidden="true" />
               </Button>
               <Button className="iconBtn" onClick={() => openUrl("leetcode")}>
                 <img className="imgBtn" src={leetcodeIcon} alt="" />
@@ -62,10 +72,10 @@ export const HomePage = () => {
         item
         xs={12}
         sm={12}
-        md={3}
+        md={6}
         style={{
           display: "flex",
-          justifyContent: window.innerWidth < 1000 ? "center" : "start",
+          justifyContent: smallScreen ? "center" : "start",
         }}
       >
         <Card className="cardContainer sloganContainer">
@@ -87,7 +97,6 @@ export const HomePage = () => {
           </div>
         </Card>
       </Grid>
-      <Grid xs={0} sm={0} md={3} />
     </Grid>
   );
 };

@@ -6,15 +6,16 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import moment from "moment";
 import { Grid } from "@mui/material";
 
-export const JobExperience = ({ jobExp, style, isLast }) => {
+export const JobExperience = ({ jobExp, isLast, childKey }) => {
   const { subtitle, title, period, learnt = [], logo, desc } = jobExp;
-
+  
   return (
     <div
       style={{
         marginBottom: isLast ? "20px" : "0px",
       }}
       className="JobExperienceContainer"
+      key={childKey}
     >
       <div className="top">
         <div className="companyLogoContainer">

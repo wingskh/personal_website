@@ -40,6 +40,7 @@ export const ProfilePage = () => {
                 <JobExperience
                   jobExp={jobExp}
                   key={index}
+                  childKey={index}
                   isLast={index !== educationExperienceData.length - 1}
                 />
               ))}
@@ -53,6 +54,7 @@ export const ProfilePage = () => {
                 <JobExperience
                   jobExp={jobExp}
                   key={index}
+                  childKey={index}
                   isLast={index !== honorsAndAwardsData.length - 1}
                 />
               ))}
@@ -72,7 +74,7 @@ export const ProfilePage = () => {
         >
           <div className="cardContentContent">
             {jobExperienceData.map((jobExp, index) => (
-              <JobExperience jobExp={jobExp} key={index} />
+              <JobExperience jobExp={jobExp} key={index} childKey={index} />
             ))}
           </div>
         </Card>
