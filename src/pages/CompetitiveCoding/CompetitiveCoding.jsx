@@ -50,7 +50,6 @@ export const CompetitiveCodingPage = () => {
               <div className="cardSubTitle" style={{ alignItems: "center" }}>
                 <div
                   style={{
-                    fontSize: "25px",
                     color: "black",
                   }}
                 >
