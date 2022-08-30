@@ -156,7 +156,6 @@ export const CompetitiveCodingPage = () => {
             ),
           },
         ]);
-        setLeetCodeData(defaultLeetCodeData())
       } catch (e) {
         if (e instanceof Error) {
           console.log(e.message);
