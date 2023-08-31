@@ -1,0 +1,26 @@
+.projectsContainer {
+  padding: 25px 20px;
+  // padding-top: 0px;
+  overflow: hidden;
+  height: 100%;
+
+  .gridContainer {
+    overflow: hidden;
+    padding: 25px 20px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    padding-top: 30px !important;
+    align-items: center !important;
+
+    .cardContainer {
+      width: auto;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      text-align: start;
+      padding: 20px;
+      flex-grow: 1;
+    }
+  }
+}

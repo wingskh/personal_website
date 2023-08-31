@@ -1,0 +1,61 @@
+.competitiveCodingContainer { 
+  padding: 25px 20px;
+  // padding-top: 0px;
+  overflow: hidden;
+  height: 100%;
+
+  .gridContainer {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    padding-top: 30px !important;
+    align-items: center !important;
+
+    .sectionTitle {
+      // background: -webkit-linear-gradient(45deg, #553c9a, #ee4b2b);
+      background: linear-gradient(45deg, #553c9a, #ee4b2b);
+      font-size: 25px;
+      font-weight: bold;
+      width: auto;
+      flex-shrink: 1;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .time {
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+
+    .icon {
+      font-size: 15px;
+      padding: 5px;
+      border-radius: 5px;
+      align-self: flex-end;
+      color:red;
+    }
+  }
+  // .cardContainer {
+    // overflow-x: scroll;
+    // white-space: nowrap;
+
+  .cardSubTitle {
+    display: flex;
+    align-items: center;
+    color: rgba(60, 60, 67, 0.3);
+    font-size: 30px;
+    font-weight: 600;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  .readme {
+    padding-left: 100px;
+    text-align: left;
+    width: 100%;
+    overflow: auto;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  // }
+}
