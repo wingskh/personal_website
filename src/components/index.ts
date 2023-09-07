@@ -6,3 +6,4 @@ export * from "./Card";
 export * from "./JobExperience";
 export * from "./JobExperience/JobExperience";
 export * from "./Project";
+export * from "./ImageModal";

@@ -1,18 +1,13 @@
 import { SideBar, NavBar } from "./components";
-
 import {
   HomePage,
   ProfilePage,
   CompetitiveCodingPage,
   ProjectsPage,
 } from "./pages";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./style/app.scss";
-import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
-import { Grid } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useDispatch } from "react-redux";
 import { useSelector } from "./redux/hooks";
@@ -65,7 +60,6 @@ const theme = createTheme({
 });
 
 function App() {
-  const { darkMode } = useContext(DarkModeContext);
   const isSideBarOpened = useSelector(
     (state) => state.userPreference.isSideBarOpened
   );

@@ -2,27 +2,10 @@ import "./HomePage.scss";
 import userIcon from "../../assets/images/icon.jpg";
 import leetcodeIcon from "../../assets/images/leetcodeIcon.png";
 import Button from "@mui/material/Button";
-import { Box, Card, Grid } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 import { useState, useEffect } from "react";
+import { openUrl } from "../../utils/general";
 
-const openUrl = (urlTyle) => {
-  let url;
-  switch (urlTyle) {
-    case "github":
-      url = "https://github.com/wingskh";
-      break;
-    case "linkedin":
-      url = "https://www.linkedin.com/in/ka-ho-sun-8b8897179/";
-      break;
-    case "leetcode":
-      url = "https://leetcode.com/wingskh/";
-      break;
-    default:
-      url = "https://github.com/wingskh";
-      break;
-  }
-  window.open(url, "_blank")!.focus();
-};
 
 export const HomePage: React.FC = () => {
   const [smallScreen, setSmallScreen] = useState(window.innerWidth < 900);

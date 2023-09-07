@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Digital-7';
-  src: url(../../assets/fonts/digital-7.ttf) format('truetype');
+  font-family: "Digital-7";
+  src: url(../../assets/fonts/digital-7.ttf) format("truetype");
 }
 .navbarContainer {
   .clockContainer {
@@ -17,7 +17,7 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  
+
   .calendar {
     font-size: 12px;
     display: flex;
@@ -28,17 +28,17 @@
     padding: 0 10px;
     padding-top: 10px;
   }
-  
+
   .row {
     display: flex;
     flex-direction: row;
     gap: 10px;
   }
-  
+
   .countdown {
     font-size: 12px;
   }
-  
+
   .hour {
     flex: 1;
     font-size: 35px;
@@ -46,57 +46,57 @@
     padding: 0;
     top: 0;
   }
-  
+
   .ampm {
     align-self: flex-end;
     font-size: 20px;
     display: flex;
-    justify-content: end;
-    align-items: end;
+    justify-content: flex-end;
+    align-items: flex-end;
     gap: 10px;
     margin-bottom: 5px;
   }
-  
+
   .digital {
     display: inline-block;
     position: relative;
-    font-family: 'Digital-7';
+    font-family: "Digital-7";
   }
-  
+
   .digital :first-child {
     width: 100%;
     position: absolute;
     color: #242a32;
   }
-  
+
   .digital :last-child {
     position: relative;
     color: #ebebeb;
   }
-  
+
   .digital p {
     margin: 0;
   }
-  
+
   // button {
   //   font-size: 1.2rem;
   //   border-radius:5px;
   //   padding: 10px;
   //   margin-bottom: 10px;
   // }
-  
+
   .fa {
     margin-left: 15px;
     font-size: 1.1rem;
   }
-  
+
   a {
     font-size: 1.1rem;
     text-decoration: none;
   }
-  
+
   .message {
-    background:#da9090;
+    background: #da9090;
     border: 2px solid rgb(255, 115, 0);
     border-radius: 5px;
     padding: 10px;
@@ -105,24 +105,24 @@
     font-family: monospace, Arial, Helvetica, sans-serif;
     text-align: center;
   }
-  
+
   // @media (max-width: 770px) {
-  
+
   // .calendar, .ampm {
   //   font-size: 0.7rem;
   // }
-  
+
   // .hour {
   //   font-size: 12rem;
   // }
-  
+
   // .clock {
   //   padding: 5px;
   // }
-  
+
   // .countdown {
   //   font-size: 4rem;
   // }
-  
+
   // }
 }

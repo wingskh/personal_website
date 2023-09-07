@@ -1,32 +1,23 @@
-import React from "react";
 import "./NavBar.scss";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import userIcon from "../../assets/images/slack.png";
 import { Clock } from "../";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import {
-  // AppBar,
-  Toolbar,
-  Typography,
-  Divider,
-  IconButton,
-} from "@mui/material";
+import { Toolbar, Typography, Divider, IconButton } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { changeSideBarActionCreator } from "../../redux/userPreference/slice";
 
 export const NavBar = () => {
-  const [auth, setAuth] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const dispatch = useDispatch();
   const curPage = useSelector((state) => state.userPreference.page);
   const isSideBarOpened = useSelector(
     (state) => state.userPreference.isSideBarOpened
   );
 
-  const handleSideBarOpenClick = (itemName) => {
+  const handleSideBarOpenClick = () => {
     dispatch(changeSideBarActionCreator(true));
   };
 
@@ -52,7 +43,6 @@ export const NavBar = () => {
             aria-label="open drawer"
             onClick={handleSideBarOpenClick}
             sx={{
-              // marginLeft: "-5px",
               ml: -1,
               mr: 2,
               ...(isSideBarOpened && {

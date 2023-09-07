@@ -1,31 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SideBar.scss";
 import { Link } from "react-router-dom";
 import {
-  Box,
   Drawer,
   List,
   Divider,
   Typography,
   ListItem,
-  Toolbar,
   ListItemButton,
   ListItemText,
 } from "@mui/material";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import { useSelector } from "../../redux/hooks";
 import { useDispatch } from "react-redux";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
@@ -46,16 +39,13 @@ const sideBarItemList = [
 
 export const SideBar: React.FC = () => {
   const dispatch = useDispatch();
-  const [selectedPage, setSelectedPage] = useState("Profile");
   const isSideBarOpened = useSelector(
     (state) => state.userPreference.isSideBarOpened
   );
   const curPage = useSelector((state) => state.userPreference.page);
-  // const [openDrawer, setOpenDrawer] = React.useState(false);
 
   const handleSideBarItemClick = (itemName) => {
     dispatch(changePageActionCreator(itemName));
-    setSelectedPage(itemName);
     if (window.innerWidth < 800) {
       handleSideBarHideClick();
     }
@@ -126,18 +116,14 @@ export const SideBar: React.FC = () => {
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
-            // width: "100%",
-            // maxWidth: drawerWidth,
             boxSizing: "border-box",
           },
-          // display: { md: "block", xs: "none" },
         }}
         className="sidebarContainer"
       >
         <div className="background">
           <DrawerHeader style={{ height: "60px", minHeight: "0px" }}>
             <div className="headerContainer">
-              {/* <div style={{ flex: 1 }}></div> */}
               <div style={{ flex: 1 }}></div>
               <Typography variant="h5" component="div" className="headerText">
                 Wing
@@ -220,9 +206,6 @@ export const SideBar: React.FC = () => {
                             ",.2)",
                         },
                       },
-                      // // hover style
-                      // ":hover": {
-                      // },
                     }}
                     selected={curPage === item.text}
                   >

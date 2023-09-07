@@ -1,14 +1,14 @@
 .JobExperienceContainer {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-bottom: 10px;
 
   .top {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
     
     .companyLogoContainer {
       width: 50px;
@@ -56,7 +56,7 @@
     overflow-wrap: break-word;
     white-space: pre-wrap;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     line-height: 18px;
 
     .responsibilitySymbol {

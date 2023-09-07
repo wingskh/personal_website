@@ -1,15 +1,15 @@
 import "./clock.scss";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Number } from "./Number";
 import { Word } from "./Word";
 
-const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+// const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 export const Clock = ({ h24 = false }) => {
   const [hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
   const [second, setSecond] = useState(0);
-  const [day, setDay] = useState(0);
+  // const [day, setDay] = useState(0);
   const [pm, setPm] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const Clock = ({ h24 = false }) => {
       setHour(hour);
       setMinute(date.getMinutes());
       setSecond(date.getSeconds());
-      setDay(date.getDay());
+      // setDay(date.getDay());
       setPm(date.getHours() >= 12);
     };
 
@@ -33,15 +33,15 @@ export const Clock = ({ h24 = false }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [h24]);
 
   return (
     <div className="clockContainer notShownInMobile">
-      {/* <div className='calendar'>
-                {
-                    days.map((value, index)=>(<Word key={value} value={value} hidden={index != day}/>))
-                }
-            </div> */}
+      {/* <div className="calendar">
+        {days.map((value, index) => (
+          <Word key={value} value={value} hidden={index !== day} />
+        ))}
+      </div> */}
       <div className="row">
         <div className="hour">
           <Number value={hour} />

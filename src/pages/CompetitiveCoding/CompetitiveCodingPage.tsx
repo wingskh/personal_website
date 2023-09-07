@@ -2,166 +2,183 @@ import "./CompetitiveCodingPage.scss";
 import React, { useState, useEffect } from "react";
 import { Widget } from "../../components";
 import { Grid } from "@mui/material";
-import { leetCodeData } from "./mockups";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ReactMarkdown from "react-markdown";
-import recordFile from "./README.md";
-import { marked } from "marked";
+import recordFile from "./record.md";
 import remarkGfm from "remark-gfm";
 import moment from "moment";
 import StarIcon from "@mui/icons-material/Star";
-import { defaultLeetCodeData } from "./defaultLeetCodeData";
+import { ILeetCodeData } from "./type";
 
 export const CompetitiveCodingPage: React.FC = () => {
-  const [recordData, setRecordData] = useState("");
-  const [leetCodeData, setLeetCodeData] = useState(
-    defaultLeetCodeData("Loading...")
-  );
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("/api/cpReadme");
-        // const response = await fetch('./README.md');
+  const [recordData, setRecordData] = useState<string>("Loading...");
+  const getFormattedLeetCodeData = (
+    newLeetCodeData: ILeetCodeData | string
+  ) => {
+    // const isSuccessFetch = isLeetCodeData(newLeetCodeData);
+    const isSuccessFetch = typeof newLeetCodeData !== "string";
+    const fontSize = isSuccessFetch ? "35px" : "25px";
 
-        const data = await response.text();
-        setRecordData(data);
-      } catch (e) {
-        if (e instanceof Error) {
-          console.log(e.message);
-          const response = await fetch(recordFile);
+    return [
+      {
+        title: <div style={{ color: "#f8a937" }}>Reputation</div>,
+        ratio: (
+          <div className="cardSubTitle" style={{ alignItems: "center" }}>
+            <div
+              style={{
+                fontSize,
+                color: "black",
+              }}
+            >
+              {isSuccessFetch
+                ? newLeetCodeData.matchedUser.profile.reputation
+                : newLeetCodeData}
+            </div>
+          </div>
+        ),
+        icon: <StarIcon style={{ color: "#f8a937" }} />,
+      },
+      {
+        title: <div style={{ color: "black" }}>Total</div>,
+        ratio: (
+          <div className="cardSubTitle">
+            <div
+              style={{
+                fontSize,
+                color: "rgba(38, 38, 38, 0.75)",
+              }}
+            >
+              {isSuccessFetch
+                ? newLeetCodeData.matchedUser.submitStats.acSubmissionNum[0]
+                    .count
+                : newLeetCodeData}
+            </div>
+            {isSuccessFetch && (
+              <div>/{newLeetCodeData.allQuestionsCount[0].count}</div>
+            )}
+          </div>
+        ),
+        icon: <AccountBalanceWalletOutlinedIcon style={{ color: "black" }} />,
+      },
+      {
+        title: <div style={{ color: "rgb(67, 160, 71)" }}>Easy</div>,
+        ratio: (
+          <div className="cardSubTitle">
+            <div
+              style={{
+                fontSize,
+                color: "rgba(38, 38, 38, 0.75)",
+              }}
+            >
+              {isSuccessFetch
+                ? newLeetCodeData.matchedUser.submitStats.acSubmissionNum[1]
+                    .count
+                : newLeetCodeData}
+            </div>
+            {isSuccessFetch && (
+              <div>/{newLeetCodeData.allQuestionsCount[1].count}</div>
+            )}
+          </div>
+        ),
+        icon: (
+          <AccountBalanceWalletOutlinedIcon
+            style={{ color: "rgb(67, 160, 71)" }}
+          />
+        ),
+      },
+      {
+        title: <div style={{ color: "rgb(251, 140, 0)" }}>Medium</div>,
+        ratio: (
+          <div className="cardSubTitle">
+            <div
+              style={{
+                fontSize,
+                color: "rgba(38, 38, 38, 0.75)",
+              }}
+            >
+              {isSuccessFetch
+                ? newLeetCodeData.matchedUser.submitStats.acSubmissionNum[2]
+                    .count
+                : newLeetCodeData}
+            </div>
+            {isSuccessFetch && (
+              <div>/{newLeetCodeData.allQuestionsCount[2].count}</div>
+            )}
+          </div>
+        ),
+        icon: (
+          <AccountBalanceWalletOutlinedIcon
+            style={{ color: "rgb(251, 140, 0)" }}
+          />
+        ),
+      },
+      {
+        title: <div style={{ color: "rgb(233, 30, 99)" }}>Hard</div>,
+        ratio: (
+          <div className="cardSubTitle">
+            <div
+              style={{
+                fontWeight: 600,
+                fontSize,
+                color: "rgba(38, 38, 38, 0.75)",
+              }}
+            >
+              {isSuccessFetch
+                ? newLeetCodeData.matchedUser.submitStats.acSubmissionNum[3]
+                    .count
+                : newLeetCodeData}
+            </div>
+            {isSuccessFetch && (
+              <div>/{newLeetCodeData.allQuestionsCount[3].count}</div>
+            )}
+          </div>
+        ),
+        icon: (
+          <AccountBalanceWalletOutlinedIcon
+            style={{ color: "rgb(233, 30, 99)" }}
+          />
+        ),
+      },
+    ];
+  };
+  const [leetCodeData, setLeetCodeData] = useState(
+    getFormattedLeetCodeData("Loading...")
+  );
+
+  useEffect(() => {
+    const handleErrorWhenFetchReadme = async () => {
+      const response = await fetch(recordFile);
+      const data = await response.text();
+      setRecordData(data);
+    };
+
+    const fetchData = async () => {
+      await fetch("/api/cpReadme")
+        .then(async (response) => {
           const data = await response.text();
-          setRecordData(data);
-        }
-      }
-      setLoading(false);
+          if (data.startsWith("<!DOCTYPE html>")) {
+            handleErrorWhenFetchReadme();
+          } else {
+            setRecordData(data);
+          }
+        })
+        .catch(async (e) => {
+          console.log("Error when fetch '/api/cpReadme':", e.message);
+          handleErrorWhenFetchReadme();
+        });
     };
     fetchData();
 
     const fetchLeetCodeData = async () => {
-      try {
-        const response = await fetch("/api/leetcode");
-        const leetCodeData = await response.json();
-        setLeetCodeData([
-          {
-            title: <div style={{ color: "#f8a937" }}>Reputation</div>,
-            ratio: (
-              <div className="cardSubTitle" style={{ alignItems: "center" }}>
-                <div
-                  style={{
-                    fontSize: "35px",
-                    color: "black",
-                  }}
-                >
-                  {leetCodeData.matchedUser.profile.reputation}
-                </div>
-              </div>
-            ),
-            icon: <StarIcon style={{ color: "#f8a937" }} />,
-          },
-          {
-            title: <div style={{ color: "black" }}>Total</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[0]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[0].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon style={{ color: "black" }} />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(67, 160, 71)" }}>Easy</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[1]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[1].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(67, 160, 71)" }}
-              />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(251, 140, 0)" }}>Medium</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[2]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[2].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(251, 140, 0)" }}
-              />
-            ),
-          },
-          {
-            title: <div style={{ color: "rgb(233, 30, 99)" }}>Hard</div>,
-            ratio: (
-              <div className="cardSubTitle">
-                <div
-                  style={{
-                    fontWeight: 600,
-                    fontSize: "35px",
-                    color: "rgba(38, 38, 38, 0.75)",
-                  }}
-                >
-                  {
-                    leetCodeData.matchedUser.submitStats.acSubmissionNum[3]
-                      .count
-                  }
-                </div>
-                /<div>{leetCodeData.allQuestionsCount[3].count}</div>
-              </div>
-            ),
-            icon: (
-              <AccountBalanceWalletOutlinedIcon
-                style={{ color: "rgb(233, 30, 99)" }}
-              />
-            ),
-          },
-        ]);
-      } catch (e) {
-        if (e instanceof Error) {
-          console.log(e.message);
-          setLeetCodeData(defaultLeetCodeData("ERROR"));
-        }
-      }
+      await fetch("/api/leetcode")
+        .then(async (response) => {
+          const newLeetCodeData = await response.json();
+          setLeetCodeData(getFormattedLeetCodeData(newLeetCodeData));
+        })
+        .catch((e) => {
+          console.log("Error when fetch '/api/leetcode':", e.message);
+          setLeetCodeData(getFormattedLeetCodeData("ERROR"));
+        });
     };
     fetchLeetCodeData();
   }, []);

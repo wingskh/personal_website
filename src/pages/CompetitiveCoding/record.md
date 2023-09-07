@@ -20,19 +20,53 @@
 
 ## Facebook Hacker Cup
 
+2020:
+
 ```
-1.  Facebook Hacker Cup 2020 Round 1 Problem A1: Perimetric - Chapter 1
-    Round1_QuestionA1_2020.py
+1.  Qualification Round Problem B: Alchemy
+    Facebook Hacker Cup\2022\Qualification Round\Question_B.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2020/qualification-round/problems/B
+
+2.  Round 1 Problem A1: Perimetric - Chapter 1
+    Facebook Hacker Cup\2020\Round 1\Question_A1.py
     https://www.facebook.com/codingcompetitions/hacker-cup/2020/round-1/problems/A1
 
-2.  Facebook Hacker Cup 2020 Round 1 Problem B: Dislodging Logs
+3.  Round 1 Problem B: Dislodging Logs
     Round1_QuestionB_2020.py
     https://www.facebook.com/codingcompetitions/hacker-cup/2020/round-1/problems/B
+```
+
+2022:
+
+```
+1.  Qualification Round Problem A: Second Hands
+    Facebook Hacker Cup\2022\Qualification Round\Question_A.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2022/qualification-round/problems/A
+
+2.  Qualification Round Problem B1: Second Friend
+    Facebook Hacker Cup\2022\Qualification Round\Question_B1.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2022/qualification-round/problems/B1
+
+2.  Qualification Round Problem B2: Second Second Friend
+    Facebook Hacker Cup\2022\Qualification Round\Question_B2.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2022/qualification-round/problems/B2
+
+2.  Qualification Round Problem C1: Second Meaning
+    Facebook Hacker Cup\2022\Qualification Round\Question_C1.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2022/qualification-round/problems/C1
+
+2.  Qualification Round Problem C2: Second Second Meaning
+    Facebook Hacker Cup\2022\Qualification Round\Question_C2.py
+    https://www.facebook.com/codingcompetitions/hacker-cup/2022/qualification-round/problems/C2
 ```
 
 ## LeetCode Exercise:
 
 ```
+1.      Two Sum (Difficulty: Easy)
+        Two_Sum.py
+        https://leetcode.com/problems/two-sum/
+
 3.      Longest Substring Without Repeating Characters (Difficulty: Medium)
         Longest_Substring_Without_Repeating_Characters.py
         https://leetcode.com/problems/longest-substring-without-repeating-characters/
@@ -49,6 +83,15 @@
         ZigZag_Conversion.py
         https://leetcode.com/problems/zigzag-conversion/
 
+11.     Container With Most Water (Difficulty: Medium)
+        Container_With_Most_Water.py
+        https://leetcode.com/problems/container-with-most-water/
+
+13.     Roman to Integer (Difficulty: Easy)
+        Roman_to_Integer.py
+        https://leetcode.com/problems/roman-to-integer/
+        https://leetcode.com/problems/roman-to-integer/discuss/2428756/Python-oror-Easily-Understood-oror-Faster-than-98-oror-Less-than-76-oror-O(n)
+
 15.     3Sum (Difficulty: Medium)
         3Sum.py
         https://leetcode.com/problems/3sum/
@@ -61,10 +104,21 @@
         Letter_Combinations_of_a_Phone_Number.py
         https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
-13.     Roman to Integer
-        Roman_to_Integer.py
-        https://leetcode.com/problems/roman-to-integer/
-        https://leetcode.com/problems/roman-to-integer/discuss/2428756/Python-oror-Easily-Understood-oror-Faster-than-98-oror-Less-than-76-oror-O(n)
+19.     Remove Nth Node From End of List (Difficulty: Medium)
+        Remove_Nth_Node_From_End_of_List.py
+        https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
+20.     Valid Parentheses (Difficulty: Easy)
+        Valid_Parentheses.py
+        https://leetcode.com/problems/valid-parentheses/
+
+21.     Merge Two Sorted Lists (Difficulty: Easy)
+        Merge_Two_Sorted_Lists.py
+        https://leetcode.com/problems/merge-two-sorted-lists/
+
+22.     Generate Parentheses (Difficulty: Medium)
+        Generate_Parentheses.py
+        https://leetcode.com/problems/generate-parentheses/
 
 30.     Substring with Concatenation of All Words (Difficulty: Hard)
         Substring_with_Concatenation_of_All_Words.py
@@ -74,10 +128,23 @@
 33.     Search in Rotated Sorted Array (Difficulty: Medium)
         Search_in_Rotated_Sorted_Array.py
         https://leetcode.com/problems/search-in-rotated-sorted-array/
-        
+
+36.     Valid Sudoku (Difficulty: Medium)
+        Valid_Sudoku.py
+        https://leetcode.com/problems/valid-sudoku/
+
 39.     Combination Sum (Difficulty: Medium)
         Combination_Sum.py
         https://leetcode.com/problems/combination-sum/
+
+42.     Trapping Rain Water (Difficulty: Hard)
+        Trapping_Rain_Water.py
+        https://leetcode.com/problems/trapping-rain-water/
+
+48.     Rotate Image (Difficulty: Medium)
+        Rotate_Image.py
+        https://leetcode.com/problems/rotate-image/
+        https://leetcode.com/problems/rotate-image/discuss/2503184/Python-oror-Easily-Understood-oror-Faster-than-99-oror-Less-than-99
 
 49.     Group Anagrams (Difficulty: Medium)
         Group_Anagrams.py
@@ -88,14 +155,38 @@
         N-Queens.py
         https://leetcode.com/problems/n-queens/
 
+53.     Maximum Subarray (Difficulty: Medium)
+        Maximum_Subarray.py
+        https://leetcode.com/problems/maximum-subarray/
+
+57.     Insert Interval (Difficulty: Medium)
+        Insert_Interval.py
+        https://leetcode.com/problems/insert-interval/
+
 62.     Unique Paths (Difficulty: Medium)
         Unique_Paths.py
         https://leetcode.com/problems/unique-paths/
         https://leetcode.com/problems/unique-paths/discuss/2363008/Python-oror-Detailed-Explanation-oror-Easy-Understand-oror-DP-oror-MATH
-        
+
 72.     Edit Distance (Difficulty: Hard)
         Edit_Distance.py
         https://leetcode.com/problems/edit-distance/
+
+74.     Search a 2D Matrix (Difficulty: Medium)
+        Search_a_2D_Matrix.py
+        https://leetcode.com/problems/search-a-2d-matrix/
+
+76.     Minimum Window Substring (Difficulty: Hard)
+        Minimum_Window_Substring.py
+        https://leetcode.com/problems/minimum-window-substring/
+
+84.     Largest Rectangle in Histogram (Difficulty: Hard)
+        Largest_Rectangle_in_Histogram.py
+        https://leetcode.com/problems/word-search/
+
+79.     Word Search (Difficulty: Medium)
+        Word_Search.py
+        https://leetcode.com/problems/word-search/
 
 97.     Interleaving String (Difficulty: Medium)
         Interleaving_String.py
@@ -106,9 +197,17 @@
         https://leetcode.com/problems/validate-binary-search-tree/
         https://leetcode.com/problems/validate-binary-search-tree/discuss/2409583/python-easily-understood-faster-than-96-recursion
 
+100.    Same Tree (Difficulty: Easy)
+        Same_Tree.py
+        https://leetcode.com/problems/same-tree/
+
 108.    Convert Sorted Array to Binary Search Tree (Difficulty: Easy)
         Convert_Sorted_Array_to_Binary_Search_Tree.py
         https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+
+110.    Balanced Binary Tree (Difficulty: Easy)
+        Balanced_Binary_Tree.py
+        https://leetcode.com/problems/balanced-binary-tree/
 
 115.    Distinct Subsequences (Difficulty: Hard)
         Distinct_Subsequences.py
@@ -118,17 +217,49 @@
         Flatten_Binary_Tree_to_Linked_List.py
         https://leetcode.com/problems/filling-bookcase-shelves/
 
+121.    Best Time to Buy and Sell Stock (Difficulty: Easy)
+        Best_Time_to_Buy_and_Sell_Stock.py
+        https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+125.    Valid Palindrome (Difficulty: Easy)
+        Valid_Palindrome.py
+        https://leetcode.com/problems/valid-palindrome/
+
 <!-- 126.    Word Ladder II (Difficulty: Hard)
         Word_Ladder_II.py
         https://leetcode.com/problems/word-ladder-ii/ -->
+
+128.    Longest Consecutive Sequence (Difficulty: Medium)
+        Longest_Consecutive_Sequence.py
+        https://leetcode.com/problems/longest-consecutive-sequence/
 
 133.    Clone Graph (Difficulty: Medium)
         Clone_Graph.py
         https://leetcode.com/problems/clone-graph/
 
+143.    Reorder List (Difficulty: Medium)
+        Reorder_List.py
+        https://leetcode.com/problems/reorder-list/
+
 148.    Sort List (Difficulty: Medium)
         Sort_List.py
         https://leetcode.com/problems/sort-list/
+
+150.    Evaluate Reverse Polish Notation (Difficulty: Medium)
+        Evaluate_Reverse_Polish_Notation.py
+        https://leetcode.com/problems/evaluate-reverse-polish-notation/
+
+153.    Find Minimum in Rotated Sorted Array (Difficulty: Medium)
+        Find_Minimum_in_Rotated_Sorted_Array.py
+        https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
+155.    Min Stack (Difficulty: Medium)
+        Min_Stack.py
+        https://leetcode.com/problems/min-stack/
+
+167.    Two Sum II - Input Array Is Sorted (Difficulty: Medium)
+        Two_Sum_II_-_Input_Array_Is_Sorted.py
+        https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 
 187.    Repeated DNA Sequences (Difficulty: Medium)
         Repeated_DNA_Sequences.py
@@ -138,10 +269,31 @@
         Best_Time_to_Buy_and_Sell_Stock_IV.py
         https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
 
+199.    Binary Tree Right Side View (Difficulty: Medium)
+        Best_Time_to_Buy_and_Sell_Stock_IV.py
+        https://leetcode.com/problems/binary-tree-right-side-view/
+
+200.    Number of Islands (Difficulty: Medium)
+        Number_of_Islands.py
+        https://leetcode.com/problems/number-of-islands/
+        https://leetcode.com/problems/number-of-islands/discuss/2499215/Python-oror-No-Recursion-oror-Faster-than-82-oror-Less-than-92
+
 217.    Contains Duplicate (Difficulty: Easy)
         Contains_Duplicate.py
         https://leetcode.com/problems/contains-duplicate/
         https://leetcode.com/problems/contains-duplicate/discuss/2381975/python-easily-understood-dp-faster-than-88-simple
+
+224.    Basic Calculator (Difficulty: Hard)
+        Basic_Calculator.py
+        https://leetcode.com/problems/basic-calculator/
+
+226.    Invert Binary Tree (Difficulty: Easy)
+        Invert_Binary_Tree.py
+        https://leetcode.com/problems/invert-binary-tree/
+
+230.    Kth Smallest Element in a BST (Difficulty: Medium)
+        Kth_Smallest_Element_in_a_BST.py
+        https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 
 235.    Lowest Common Ancestor of a Binary Search Tree (Difficulty: Easy)
         Lowest_Common_Ancestor_of_a_Binary_Search_Tree.py
@@ -151,6 +303,10 @@
 236.    Lowest Common Ancestor of a Binary Tree (Difficulty: Medium)
         Lowest_Common_Ancestor_of_a_Binary_Tree.py
         https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+
+239.    Sliding Window Maximum (Difficulty: Hard)
+        Sliding_Window_Maximum.py
+        https://leetcode.com/problems/sliding-window-maximum/
 
 240.    Search a 2D Matrix II (Difficulty: Medium)
         Search_a_2D_Matrix_II.py
@@ -163,6 +319,10 @@
 234.    Palindrome Linked List (Difficulty: Easy)
         Palindrome_Linked_List.java
         https://leetcode.com/problems/palindrome-linked-list/
+
+238.    Product of Array Except Self (Difficulty: Medium)
+        Product_of_Array_Except_Self.py
+        https://leetcode.com/problems/product-of-array-except-self/
 
 300.    Longest Increasing Subsequence (Difficulty: Medium)
         Longest_Increasing_Subsequence.py
@@ -177,10 +337,18 @@
         Coin_Change.py
         https://leetcode.com/problems/coin-change/
 
+326.    Power of Three (Difficulty: Easy)
+        Power_of_Three.py
+        https://leetcode.com/problems/power-of-three/
+
 342.    Power of Four (Difficulty: Easy)
         Power_of_Four.py
         https://leetcode.com/problems/power-of-four/
         https://leetcode.com/problems/power-of-four/discuss/2461447/python-easily-understood-faster-than-92-explanation
+
+347.    Top K Frequent Elements (Difficulty: Medium)
+        Top_K_Frequent_Elements.py
+        https://leetcode.com/problems/top-k-frequent-elements/
 
 375.    Guess Number Higher or Lower II (Difficulty: Medium)
         Guess_Number_Higher_or_Lower_II.py
@@ -197,10 +365,20 @@
         https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
         https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/discuss/2385771/python-detailed-explanation-easy-understand-binarysearch
 
-387.    First Unique Character in a String
+383.    Ransom Note (Difficulty: Easy)
+        Ransom_Note.py
+        https://leetcode.com/problems/ransom-note/
+        https://leetcode.com/problems/ransom-note/discuss/2476142/Python-oror-Easily-Understood-oror-Faster-than-96-oror-Fast
+
+387.    First Unique Character in a String (Difficulty: Easy)
         First_Unique_Character_in_a_String.py
         https://leetcode.com/problems/first-unique-character-in-a-string/
         https://leetcode.com/problems/first-unique-character-in-a-string/discuss/2431833/python-easily-understood-faster-than-997-5-lines
+
+387.    First Unique Character in a String (Difficulty: Easy)
+        First_Unique_Character_in_a_String.py
+        https://leetcode.com/problems/first-unique-character-in-a-string/
+        https://leetcode.com/problems/first-unique-character-in-a-string/discuss/2431833/Python-oror-Easily-Understood-oror-Faster-than-99.7-oror-5-Lines
 
 410.    Split Array Largest Sum (Difficulty: Hard)
         Split_Array_Largest_Sum.java
@@ -209,6 +387,14 @@
 416.    Partition Equal Subset Sum (Difficulty: Medium)
         Partition_Equal_Subset_Sum.py
         https://leetcode.com/problems/partition-equal-subset-sum/
+
+417.    Pacific Atlantic Water Flow (Difficulty: Medium)
+        Pacific_Atlantic_Water_Flow.py
+        https://leetcode.com/problems/pacific-atlantic-water-flow/
+
+424.    Longest Repeating Character Replacement (Difficulty: Medium)
+        Longest_Repeating_Character_Replacement.py
+        https://leetcode.com/problems/longest-repeating-character-replacement/
 
 458.    Poor Pigs (Difficulty: Hard)
         Poor_Pigs.py
@@ -231,9 +417,17 @@
         K-diff_Pairs_in_an_Array.py
         https://leetcode.com/problems/k-diff-pairs-in-an-array/
 
-543.    Diameter of Binary Tree
+543.    Diameter of Binary Tree (Difficulty: Easy)
         Diameter_of_Binary_Tree.py
         https://leetcode.com/problems/diameter-of-binary-tree/
+
+567.    Permutation in String (Difficulty: Medium)
+        Permutation_in_String.py
+        https://leetcode.com/problems/permutation-in-string/
+
+572.    Subtree of Another Tree (Difficulty: Easy)
+        Subtree_of_Another_Tree.py
+        https://leetcode.com/problems/subtree-of-another-tree/
 
 583.    Delete Operation for Two Strings (Difficulty: Medium)
         Delete_Operation_for_Two_Strings.py
@@ -248,10 +442,14 @@
         Split_Array_into_Consecutive_Subsequences.py
         https://leetcode.com/problems/split-array-into-consecutive-subsequences/
         https://leetcode.com/problems/split-array-into-consecutive-subsequences/discuss/2448243/python-easily-understood-faster-than-90-explanation
-        
+
 665.    Non-decreasing Array (Difficulty: Medium)
         Non-decreasing_Array.java
         https://leetcode.com/problems/non-decreasing-array/
+
+704.    Binary Search (Difficulty: Easy)
+        Binary_Search.py
+        https://leetcode.com/problems/binary-search/
 
 718.    Maximum Length of Repeated Subarray (Difficulty: Medium)
         Maximum_Length_of_Repeated_Subarray.py
@@ -266,6 +464,14 @@
         https://leetcode.com/problems/my-calendar-i/
         https://leetcode.com/problems/my-calendar-i/discuss/2372304/Python-oror-Detailed-Explanation-oror-Easy-Understand-oror-No-Libray-oror-Binary-Search
 
+733.    Flood Fill (Difficulty: Easy)
+        Flood_Fill.py
+        https://leetcode.com/problems/flood-fill/
+
+739.    Daily Temperatures (Difficulty: Medium)
+        Daily_Temperatures.py
+        https://leetcode.com/problems/daily-temperatures/
+
 796.    Rotate String (Difficulty: Easy)
         Rotate_String.java
         https://leetcode.com/problems/rotate-string/
@@ -279,7 +485,7 @@
         Largest_Sum_of_Averages.py
         https://leetcode.com/problems/largest-sum-of-averages/
 
-823.    Binary Trees With Factors
+823.    Binary Trees With Factors (Difficulty: Medium)
         Binary_Trees_With_Factors.py
         https://leetcode.com/problems/binary-trees-with-factors/
         https://leetcode.com/problems/binary-trees-with-factors/discuss/2402569/Python-oror-Detailed-Explanation-oror-Easily-Understood-oror-DP-oror-O(n-*-sqrt(n))
@@ -288,15 +494,28 @@
         Masking_Personal_Information.py
         https://leetcode.com/problems/masking-personal-information/
 
-858.    Mirror Reflection
+853.    Car Fleet (Difficulty: Medium)
+        Car_Fleet.py
+        https://leetcode.com/problems/car-fleet/
+
+858.    Mirror Reflection (Difficulty: Medium)
         Mirror_Reflection.py
         https://leetcode.com/problems/mirror-reflection/
         https://leetcode.com/problems/mirror-reflection/discuss/2376489/python-easily-understood-detailed-explanation-easy-understand-math-fast-simple
+
+869.    Reordered Power of 2 (Difficulty: Medium)
+        Reordered_Power_of_2.py
+        https://leetcode.com/problems/reordered-power-of-2/
+        https://leetcode.com/problems/reordered-power-of-2/discuss/2482894/Python-oror-Easily-Understood-oror-Faster-than-96-oror-Fast
 
 871.    Minimum Number of Refueling Stops (Difficulty: Hard)
         Minimum_Number_of_Refueling_Stops.py
         https://leetcode.com/problems/minimum-number-of-refueling-stops/
         https://leetcode.com/problems/minimum-number-of-refueling-stops/discuss/2452673/python-easily-understood-faster-than-90-fast
+
+875.    Koko Eating Bananas (Difficulty: Medium)
+        Koko_Eating_Bananas.py
+        https://leetcode.com/problems/koko-eating-bananas/
 
 879.    Profitable Schemes (Difficulty: Hard)
         Profitable_Schemes.py
@@ -309,7 +528,7 @@
 936.    Stamping The Sequence (Difficulty: Hard)
         Stamping_The_Sequence.py
         https://leetcode.com/problems/stamping-the-sequence/
-        
+
 956.    Tallest Billboard (Difficulty: Hard)
         Tallest_Billboard.py
         https://leetcode.com/problems/tallest-billboard/
@@ -317,6 +536,10 @@
 980.    Unique Paths III (Difficulty: Hard)
         Unique_Paths_III.py
         https://leetcode.com/problems/unique-paths-iii/
+
+981.    Time Based Key-Value Store (Difficulty: Medium)
+        Time_Based_Key-Value_Store.py
+        https://leetcode.com/problems/time-based-key-value-store/
 
 1049.   Last Stone Weight II (Difficulty: Medium)
         Last_Stone_Weight_II.py
@@ -347,6 +570,11 @@
         Break_a_Palindrome.py
         https://leetcode.com/problems/break-a-palindrome/
 
+1329.   Sort the Matrix Diagonally (Difficulty: Medium)
+        Sort_the_Matrix_Diagonally.py
+        https://leetcode.com/problems/sort-the-matrix-diagonally/
+        https://leetcode.com/problems/sort-the-matrix-diagonally/discuss/2493821/python-easily-understood-faster-than-93-less-than-99
+
 1335.   Minimum Difficulty of a Job Schedule (Difficulty: Hard)
         Minimum_Difficulty_of_a_Job_Schedule.py
         https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/
@@ -356,12 +584,16 @@
         https://leetcode.com/problems/reduce-array-size-to-the-half/
         https://leetcode.com/problems/reduce-array-size-to-the-half/discuss/2443799/python-easily-understood-faster-than-90-explanation
 
-2364.   Count Number of Bad Pairs
+1926.   Nearest Exit from Entrance in Maze (Difficulty: Medium)
+        Nearest_Exit_from_Entrance_in_Maze.py
+        https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/
+
+2364.   Count Number of Bad Pairs (Difficulty: Medium)
         Count_Number_of_Bad_Pairs.py
         https://leetcode.com/problems/count-number-of-bad-pairs/
         https://leetcode.com/problems/count-number-of-bad-pairs/discuss/2388687/Python-oror-Detailed-Explanation-oror-Faster-Than-100-oror-Less-than-100-oror-Simple-oror-MATH
 
-2365.   Task Scheduler II
+2365.   Task Scheduler II (Difficulty: Medium)
         Task_Scheduler_II.py
         https://leetcode.com/problems/task-scheduler-ii/
         https://leetcode.com/problems/task-scheduler-ii/discuss/2388526/python-easily-understood-faster-than-98-simple-o0
@@ -397,4 +629,32 @@
 5.      Reverse Linked List
         ReverseLinkedList.py
         https://www.youtube.com/watch?v=vHKzIPwWQkg&t=150s&ab_channel=Cl%C3%A9mentMihailescu
+```
+
+## Codewars
+
+```
+1.      List Filtering
+        List_Filtering.js
+        https://www.codewars.com/kata/53dbd5315a3c69eed20002dd/javascript
+
+2.      Persistent Bugger
+        Persistent_Bugger.js
+        https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec/javascript
+
+3.      Categorize New Member
+        Categorize_New_Member.js
+        https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa/javascript
+
+4.      Regex validate PIN code
+        Regex_validate_PIN_code.js
+        https://www.codewars.com/kata/55f8a9c06c018a0d6e000132/javascript
+
+5.      Unique In Order
+        Unique_In_Order.js
+        https://www.codewars.com/kata/54e6533c92449cc251001667/javascript
+
+6.      Beginner Series #3 Sum of Numbers
+        Beginner_Series_#3_Sum_of_Numbers.js
+        https://www.codewars.com/kata/55f2b110f61eb01779000053/javascript
 ```

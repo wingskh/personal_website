@@ -2,8 +2,8 @@
   padding: 20px;
   overflow: hidden;
   height: 100%;
-  
-  .cardContainer{
+
+  .cardContainer {
     max-width: 350px;
     width: 100%;
     margin-bottom: 20px;
@@ -15,14 +15,14 @@
     .userInfo {
       padding: 20px;
       display: flex;
-      flex-direction: column ;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
       .iconBtn {
         font-size: 40px !important;
         color: black;
-        min-width: 0px;      
+        min-width: 0px;
         width: fit-content;
         margin-right: 10px;
         padding: 1px;
@@ -33,7 +33,7 @@
         height: 34px;
         width: 34px;
         color: black;
-        padding: 0px;    
+        padding: 0px;
         margin-right: 10px;
         border-radius: 7px;
       }
@@ -42,7 +42,7 @@
         border-radius: 5px;
         width: 100%;
       }
-      
+
       .userDescText {
         h2 {
           margin-bottom: 0px;
@@ -58,17 +58,16 @@
     background-color: black !important;
     height: 100% !important;
     flex-grow: 1;
-    
+
     .slogan {
       margin: 20px;
       // margin-top: 50px;
       // margin-bottom: 50px;
-      justify-content: start;
-      text-align: start;
+      justify-content: flex-start;
+      text-align: flex-start;
       display: flex;
       overflow: hidden;
       white-space: nowrap;
     }
   }
-
 }

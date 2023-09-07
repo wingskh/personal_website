@@ -1,18 +1,51 @@
 .projectContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   white-space: nowrap;
   overflow: hidden;
   flex: 1;
-  padding: 10px;
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
   border-radius: 10px;
-  height: 100px;
+  height: 500px;
   background-color: white;
 
-  .projectDemo {
+  .projectContainerItem {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    white-space: initial;
+
+    .projectTitle {
+      font-weight: 700;
+      font-size: large;
+    }
+
+    .projectDesc {
+      padding-left: 10px;
+    }
+
+    .projectTech {
+      padding-left: 27px;
+      margin: 0px;
+    }
+
+    .projectRepo {
+      position: absolute;
+      bottom: 4px;
+      right: 10px;
+      height: fit-content;
+      color: black;
+      font-size: 40px !important;
+    }
+  }
+
+  .projectDemoImage {
     width: 100%;
     height: 100%;
   }

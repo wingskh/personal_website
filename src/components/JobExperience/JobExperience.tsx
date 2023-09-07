@@ -1,14 +1,8 @@
 import "./JobExperience.scss";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import moment from "moment";
-import { Grid } from "@mui/material";
 
 export const JobExperience = ({ jobExp, isLast, childKey }) => {
   const { subtitle, title, period, learnt = [], logo, desc } = jobExp;
-  
+
   return (
     <div
       style={{

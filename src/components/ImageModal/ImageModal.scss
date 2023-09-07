@@ -1,0 +1,35 @@
+.imageModalContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1101;
+  cursor: pointer;
+
+  .imageModalBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1f2937;
+    opacity: 0.75;
+  }
+  .imageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+  }
+}
