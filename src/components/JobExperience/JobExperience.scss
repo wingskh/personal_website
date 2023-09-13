@@ -9,7 +9,20 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    
+
+    .companyLogoContainer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid black;
+      border-radius: 5px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
     .companyLogoContainer {
       width: 50px;
       height: 50px;
@@ -17,13 +30,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid black;
-      border-radius: 5px;
+      position: relative;
 
-      .companyLogo {
-        width: 50px;
-        height: auto;
-        border-radius: inherit;
+      .companyBackground {
+        width: max-content;
+        height: 100%;
+
+        .companyLogo {
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          object-fit: contain;
+          z-index: 99;
+        }
       }
     }
 
@@ -32,27 +51,24 @@
       height: 100%;
       flex-direction: column;
       justify-content: space-around;
-      // justify-content: space-evenly;
-      // justify-content: space-between;
 
       .jobTitle {
         font-weight: bold;
       }
-    
+
       .companyName {
         font-weight: 400;
       }
-    
+
       .companyName {
         font-weight: 400;
       }
     }
   }
-  .bottom  {
+  .bottom {
     margin-top: 5px;
     margin-bottom: 20px;
     display: flex;
-    // overflow: auto;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     flex-direction: column;

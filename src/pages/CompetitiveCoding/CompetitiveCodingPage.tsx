@@ -15,7 +15,6 @@ export const CompetitiveCodingPage: React.FC = () => {
   const getFormattedLeetCodeData = (
     newLeetCodeData: ILeetCodeData | string
   ) => {
-    // const isSuccessFetch = isLeetCodeData(newLeetCodeData);
     const isSuccessFetch = typeof newLeetCodeData !== "string";
     const fontSize = isSuccessFetch ? "35px" : "25px";
 
@@ -206,7 +205,6 @@ export const CompetitiveCodingPage: React.FC = () => {
         item
         xs={12}
         style={{
-          // paddingTop: "30px",
           alignItems: "center",
         }}
       >

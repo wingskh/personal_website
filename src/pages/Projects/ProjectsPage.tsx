@@ -6,6 +6,14 @@ import "./ProjectsPage.scss";
 export const ProjectsPage: React.FC = () => {
   return (
     <div className="projectsContainer">
+      <div className="projectHeader">FYP</div>
+      <Grid container spacing="20px" className="gridContainer">
+        {projectData.fyp.map((project, index) => (
+          <Grid xs={12} sm={12} md={12} key={index}>
+            <Project project={project} projectType="web" />
+          </Grid>
+        ))}
+      </Grid>
       <div className="projectHeader">Website</div>
       <Grid container spacing="20px" className="gridContainer">
         {projectData.web.map((project, index) => (

@@ -12,7 +12,7 @@ export const educationExperienceData = [
         <div>- Data Analytics and Informatics</div>
       </div>
     ),
-    logo: require("../../assets/images/CUHK-logo.png"),
+    logo: require("../../assets/images/colleges/CUHK-logo.png"),
   },
   {
     title: "HKUSPACE Community College",
@@ -23,6 +23,6 @@ export const educationExperienceData = [
         <div>CGPA:&#09;3.76 (Distinction)</div>
       </div>
     ),
-    logo: require("../../assets/images/HKUSPACE-logo.png"),
+    logo: require("../../assets/images/colleges/HKUSPACE-logo.png"),
   },
 ];

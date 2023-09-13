@@ -27,7 +27,6 @@ export const userPreferenceSlice = createSlice({
       state.page = action.payload;
     },
     changeSideBarActionCreator: (state, action: PayloadAction<boolean>) => {
-      console.log("changeSideBarActionCreator:", action);
       state.isSideBarOpened = action.payload;
     },
   },

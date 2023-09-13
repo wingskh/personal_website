@@ -5,10 +5,14 @@ import flutterShoppingListImage from "../../assets/images/projects/Flutter-Shopp
 import footballScreenerImage from "../../assets/images/projects/football-screener.png";
 import reactCtripImage from "../../assets/images/projects/react_ctrip.gif";
 import votingSystemImage from "../../assets/images/projects/Voting-System.gif";
+import fypImage from "../../assets/images/projects/FYP.gif";
+import fypProfitImage from "../../assets/images/projects/FYP-Profit.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 enum RepoType {
   Github = "Github",
   Gitlab = "Gitlab",
+  PDF = "PDF",
 }
 
 export const getRepoIcon = (repoType: RepoType) => {
@@ -17,26 +21,42 @@ export const getRepoIcon = (repoType: RepoType) => {
       return <i className="fa fa-github-square" aria-hidden="true" />;
     case RepoType.Gitlab:
       return <i className="fa fa-square-gitlab" aria-hidden="true" />;
+    case RepoType.PDF:
+      return <FontAwesomeIcon icon="file-pdf" />;
     default:
       return <></>;
   }
 };
 
 export interface IProject {
-  image: any;
+  image: string;
   repoUrl: string;
   repoType: RepoType;
   techniques: string[];
   desc: string;
   title: string;
+  supplementImage?: string;
 }
 
 export interface IProjects {
   app: IProject[];
   web: IProject[];
+  fyp: IProject[];
 }
 
 export const projectData: IProjects = {
+  fyp: [
+    {
+      image: fypImage,
+      repoUrl:
+        "https://www.cse.cuhk.edu.hk/lyu/_media/students/lyu2005_2nd_term_report.pdf?id=students%3Afyp&cache=cache",
+      repoType: RepoType.PDF,
+      techniques: ["Machine Learning", "Data Science", "Statistics"],
+      desc: "Predicting handicap result of Soccer using betting odds via Machine Learning.\nPositive: Home Team\nNegative: Away Team",
+      title: "Prediction for Soccer Handicap(讓球) Result",
+      supplementImage: fypProfitImage,
+    },
+  ],
   app: [
     {
       image: flutterCookbookAppImage,

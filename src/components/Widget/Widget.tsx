@@ -10,8 +10,6 @@ export const Widget = ({ data }) => {
         </div>
         <div className="right">
           <div className="percentage positive">
-            {/* <KeyboardArrowUpIcon />
-            20 % */}
           </div>
         </div>
       </span>

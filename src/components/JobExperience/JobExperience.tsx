@@ -13,7 +13,9 @@ export const JobExperience = ({ jobExp, isLast, childKey }) => {
     >
       <div className="top">
         <div className="companyLogoContainer">
-          <img className="companyLogo" src={logo} alt={subtitle} />
+          <div className="companyBackground">
+            <img className="companyLogo" src={logo} alt={subtitle} />
+          </div>
         </div>
         <div className="jobDetailContainer">
           <div className="jobTitle">{title}</div>
