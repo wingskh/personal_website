@@ -10,7 +10,7 @@ type ProjectType = "web" | "app";
 export const Project: React.FC<{
   project: IProject;
   projectType: ProjectType;
-}> = ({ project, projectType }) => {
+}> = ({ project }) => {
   const { image, repoUrl, repoType, techniques, desc, title, supplementImage } =
     project;
   const [isOpenedDemoModal, setIsOpenedDemoModal] = useState(false);
@@ -64,7 +64,7 @@ export const Project: React.FC<{
         >
           <img
             className="projectDemoImage"
-            style={{ objectFit: projectType === "web" ? "fill" : "contain" }}
+            style={{ objectFit: "contain" }}
             src={image}
             onLoad={handleDemoImageLoad}
             alt="ProjectDemo"
