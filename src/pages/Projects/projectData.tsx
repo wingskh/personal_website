@@ -49,7 +49,7 @@ export const projectData: IProjects = {
     {
       image: fypImage,
       repoUrl:
-        "https://www.cse.cuhk.edu.hk/lyu/_media/students/lyu2005_2nd_term_report.pdf?id=students%3Afyp&cache=cache",
+        "https://www.cse.cuhk.edu.hk/lyu/_media/thesis/report-2005-2.pdf?id=students%3Afyp&cache=cache",
       repoType: RepoType.PDF,
       techniques: ["Machine Learning", "Data Science", "Statistics"],
       desc: "Predicting handicap result of Soccer using betting odds via Machine Learning.\nPositive: Home Team\nNegative: Away Team",
